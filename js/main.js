@@ -16,22 +16,27 @@ const userNumber = Number( prompt("Scegli un numero tra 0 e 5"));
 console.log('il numero dell\'utente', userNumber);
 const cpuNumber = Math.floor(Math.random() * 6);
 console.log('il Numero della CPU', cpuNumber);
-const sum = userNumber + cpuNumber;
-console.log(sum);
 
-// se sum / 2 da resto 0 allora il numero è pari
-// altrimenti il numero è dispari
-let result;
-if(sum % 2 === 0){
-    result ="pari";
-}else {
-    result = "dispari";
-}
+if( !(userNumber === 0 && cpuNumber === 0) ){
+    const sum = userNumber + cpuNumber;
+    console.log(sum);
 
-console.log(result);
+    // se sum / 2 da resto 0 allora il numero è pari
+    // altrimenti il numero è dispari
+    let result;
+    if(sum % 2 === 0){
+        result ="pari";
+    }else {
+        result = "dispari";
+    }
 
-if(userChoice === result){
-    alert('Hai vinto!!!');
+    console.log(result);
+
+    if(userChoice === result){ 
+        alert('Hai vinto!!!');
+    }else{
+        alert('Hai perso!!!');
+    }   
 }else{
-    alert('Hai perso!!!');
+    alert("Entrambi i numeri non possono essere uguali a 0, ricarica la pagina");
 }
